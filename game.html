@@ -22,9 +22,25 @@ function game (data)
 	document.getElementById("terminal").innerHTML += "<p>Te encuentras en "+game_data.rooms[current_room].name+". ¿Qué quieres hacer?</p>";
 }
 
+
+function parseCommand (command)
+{
+	console.log("El comando ", command);
+}
+
+function parseInstruction (instruction)
+{
+
+	console.log("La instrucción", instruction);
+}
+
+
 function readAction ()
 {
 	let command = document.getElementById("commands").value;
+	
+	let data = instruction.trim(().split(" ");
+
 
 	let data = command.split(" ");
 	if (data.length == 0){
