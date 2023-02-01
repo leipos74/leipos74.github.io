@@ -10,22 +10,40 @@
 
 <script>
 
+
 let game_data;
 
 let current_room = 0;
 let items_picked = [];
+
 function game (data)
 {
 	game_data = data;
 	
-	document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong> El juego de mierda definitivo.</p>";
+	document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong> El juego de terror definitivo.</p>";
 	document.getElementById("terminal").innerHTML += "<p>Te encuentras en "+game_data.rooms[current_room].name+". ¿Qué quieres hacer?</p>";
 }
 
+function terminal_out (info)
+{
+	document.getElementById("terminal").innerHTML += info;
+}
 
 function parseCommand (command)
 {
 	console.log("El comando ", command);
+	switch (command){
+		case "ver":
+			terminal_out(game_data.rooms[current_room].description);
+			
+			
+			break;
+
+		default:
+			terminal_out("<p><strong>Error</strong>: "+command+" commando no encontrado</p>");
+
+
+	}
 }
 
 function parseInstruction (instruction)
@@ -34,26 +52,25 @@ function parseInstruction (instruction)
 	console.log("La instrucción", instruction);
 }
 
-
 function readAction ()
 {
 	let instruction = document.getElementById("commands").value;
-	
-	let instruction_trim = instruction.split();
-
+	let instruction_trim = instruction.trim();
 
 	let data = instruction_trim.split(" ");
-	
+
 	if (data.length == 0 || instruction_trim == ""){
-		document.getElementById("terminal").innerHTML += "<p><strong>Error</strong>: Escribe una instruccion</p>";
+		terminal_out("<p><strong>Error</strong>: escribe una instrucción</p>");
 		return;
 	}
+
 	if (data.length == 1){
 		parseCommand(data[0]);
 	}
 	else{
 		parseInstruction(data);
 	}
+
 }
 
 fetch("https://leipos74.github.io/game.json").then(response => response.json()).then(data => game(data));
