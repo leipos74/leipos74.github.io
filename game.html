@@ -21,7 +21,25 @@ function game (data)
 	document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong> El juego de mierda definitivo.</p>";
 	document.getElementById("terminal").innerHTML += "<p>Te encuentras en "+game_data.rooms[current_room].name+". ¿Qué quieres hacer?</p>";
 }
-fetch("https://rafaenti.github.io/game.json").then(response => response.json()).then(data => game(data));
+
+function readAction ()
+{
+	let command = document.getElementById("commands").value;
+
+	let data = command.split(" ");
+	if (data.length == 0){
+		document.getElementById("terminal").innerHTML += "<p><strong>Error</strong>: Escribe una instruccion</p>";
+		return;
+	}
+	if (data.length == 1){
+		parseCommand(data[0]);
+	}
+	else{
+		parseInstruction(data);
+	}
+}
+
+fetch("https://PolSantos.github.io/game.json").then(response => response.json()).then(data => game(data));
 
 
 </script>
@@ -53,13 +71,13 @@ fetch("https://rafaenti.github.io/game.json").then(response => response.json()).
 <form>
 <div id="terminal"></div>
 <input type="text" id="commands">
-<input type="submit" value="Acción">
+<input type="submit" value="Acción" onclick="readAction(); return false;"/>
 </form>
 </article>
 
 <aside>
 <h2>Lateral</h2>
-<p>Ejemplo de menú lateral</p>
+<p>Menú lateral</p>
 </aside>
 
 </main>
