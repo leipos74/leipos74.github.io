@@ -37,13 +37,14 @@ function parseInstruction (instruction)
 
 function readAction ()
 {
-	let command = document.getElementById("commands").value;
+	let instruction = document.getElementById("commands").value;
 	
-	let data = instruction.trim(().split(" ");
+	let instruction_trim = instruction.split();
 
 
-	let data = command.split(" ");
-	if (data.length == 0){
+	let data = instruction_trim.split(" ");
+	
+	if (data.length == 0 || instruction_trim == ""){
 		document.getElementById("terminal").innerHTML += "<p><strong>Error</strong>: Escribe una instruccion</p>";
 		return;
 	}
