@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> En busaca de abascal </title> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="base.css" />
+
+<script>
+
+let game_data;
+
+let current_room = 0;
+let items_picked = [];
+function game (data)
+{
+	game_data = data;
+	
+	document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong> El juego de mierda definitivo.</p>";
+	document.getElementById("terminal").innerHTML += "<p>Te encuentras en "+game_data.rooms[current_room].name+". ¿Qué quieres hacer?</p>";
+}
+fetch("https://rafaenti.github.io/game.json").then(response => response.json()).then(data => game(data));
+
+
+</script>
+
+
+
+</head>
+
+
+<body>
+<header>
+<h1>Pol Santos, Llenguatge de marques</h1>
+<nav>
+<ul id="main-menu">
+<li id="menu-presentation"><a href="index.html">Presentacion</a></li>
+<li id="menu-hobbies"><a href="hobbies.html">Hobbies</a></li>
+<li id="menu-contact"><a href="contact.html">Contacto</a></li>
+<li id="menu-cv"><a href="cv.html">CV</a></li>
+<li id="menu-game"><a href="game.html">Juego</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+
+<article>
+<h2>Juegaco</h2>
+
+<form>
+<div id="terminal"></div>
+<input type="text" id="commands">
+<input type="submit" value="Acción">
+</form>
+</article>
+
+<aside>
+<h2>Lateral</h2>
+<p>Ejemplo de menú lateral</p>
+</aside>
+
+</main>
+
+		<footer>
+
+
+				<p> Copyright (c) 2022,2023 - Pol Santos</p>
+				<p> OnlyFans: <a href="http://amogus.org/index.html"> @big_titis</a></p>
+
+		</footer>
+
+</body>
+
+
+</html>

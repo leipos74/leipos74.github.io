@@ -1,0 +1,41 @@
+{
+	"rooms":[
+		{
+			"id":"parking", 
+			"name":"Parkin de ENTI", 
+			"description":"El parkin donde no tienes tu coche",
+			"items":["piedra","bicicleta"],
+			"doors":["principal","salida"]
+		}
+	],
+		
+	
+	"items":[
+	{
+		"id":"piedra",
+		"name":"Pedrusco",
+		"description":"Piedra con un chicle pegado",
+		"pickable":"true"
+	},
+	{
+		"id":"bicicleta",
+		"name":"Bicicleta mugrosa",
+		"description":"Algun profesor la abandono",
+		"pickable":"false"
+	}
+	],
+	
+	
+	"doors":[
+	{
+		"id":"principal",
+		"description":"Puerta entrada ENTI",
+		"rooms":["parking","hall"]
+	},
+	{
+		"id":"salida",
+		"description":"La salvacion"
+	}
+	
+	]
+}
