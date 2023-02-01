@@ -6,6 +6,13 @@
 			"description":"El parkin donde no tienes tu coche",
 			"items":["piedra","bicicleta"],
 			"doors":["principal","salida"]
+		},
+		{
+			"id":"hall", 
+			"name":"Pasillo de entrada de ENTI", 
+			"description":"pasillo que conecta con otras habitaciones ",
+			"items":["piedra","bicicleta"],
+			"doors":["principal","salida"]
 		}
 	],
 		

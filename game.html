@@ -45,8 +45,7 @@ function parseCommand (command)
 		case "ir":
 			let doors = "";
 			let doors_num = game_data.rooms[current_room].doors.length;
-			
-			for (let i = 0; i < doors_num; i++) {
+			for (let i = 0; i < doors_num; i++){
 				doors += game_data.rooms[current_room].doors[i]+", ";
 			}
 			terminal_out("<p>Puedes ir a: "+doors+"</p>");
@@ -59,10 +58,66 @@ function parseCommand (command)
 	}
 }
 
+
+function getRoomNumber (room)
+{
+	for (let i = 0; i < game_data.rooms.length; i++){
+		if (game_data.rooms[i].id == room){
+			return i;
+		}
+	}
+
+	return -1;
+}
+
+function getDoorNumber (door)
+{
+	for (let i = 0; i < game_data.doors.length; i++){
+		if (game_data.doors[i].id == door){
+			return i;
+		}
+	}
+
+	return -1;
+}
+
+
 function parseInstruction (instruction)
 {
 
-	console.log("La instrucción", instruction);
+	console.log("La instruccióni ", instruction);
+
+	switch (instruction[0]){
+		case "ver":
+
+			break;
+
+		case "ir":
+			
+			let door_num = getDoorNumber(instruction[1]);
+			if (door_num < 0){
+				console.log("Puerta errónea");
+				return;
+			}
+
+			let room_num = getRoomNumber(game_data.doors[door_num].rooms[0]);
+			if (room_num == current_room){
+				current_room = getRoomNumber(game_data.doors[door_num].rooms[1]);
+			}
+			else{
+				current_room = room_num;
+			}
+
+			break;
+
+		case "coger":
+
+			break;
+
+
+		default:
+			terminal_out("<p><strong>Error</strong>: "+instruction[0]+" commando no encontrado</p>");
+	}
 }
 
 function readAction ()
