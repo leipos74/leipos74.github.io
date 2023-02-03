@@ -10,7 +10,7 @@
 		{
 			"id":"hall", 
 			"name":"Pasillo de entrada de ENTI", 
-			"description":"pasillo que conecta con otras habitaciones ",
+			"description":"pasillo que conecta con diferentes salas y tiene un arbol de nabidad pocho.",
 			"items":["piedra","bicicleta"],
 			"doors":["principal","salida"]
 		}
