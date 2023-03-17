@@ -67,11 +67,11 @@ function parseCommand (command)
 {
 	console.log("El comando ", command);
 	switch (command){
-		case "ver":
+		case 'ver':
 			terminal_out("<p>"+game_data.rooms[current_room].description+"</p>");
 			break;
 
-		case "ir":
+		case 'ir':
 			let doors = "";
 			let doors_num = game_data.rooms[current_room].doors.length;
 			for (let i = 0; i < doors_num; i++){
@@ -80,7 +80,7 @@ function parseCommand (command)
 			terminal_out("<p>Puedes ir a: "+doors+"</p>");
 			break;
 		
-		case "coger":
+		case 'coger':
 			
 			let items = "";
 			let num = game_data.rooms[current_room].items.length;
@@ -118,11 +118,11 @@ function parseInstruction (instruction)
 	console.log("La instrucción ", instruction);
 
 	switch (instruction[0]){
-		case "ver":
+		case 'ver':
 
 			break;
 
-		case "ir":
+		case 'ir':
 			
 			let door_num = getDoorNumber(instruction[1]);
 			if (door_num < 0){
@@ -145,24 +145,37 @@ function parseInstruction (instruction)
 
 			break;
 
-		case "coger":
-		
-			game_data.rooms[current_room].items.forEach(function(item){
+		case 'coger':
+			
+			game_data.rooms[current_room].items.forEach(function (item) {
+				if (item == instruction[1]) {
 				
-				if (item == instruction[1]){
-					items_picked.push(item);
-					
 					let item_num = game_data.rooms[current_room].items.indexOf(item);
-					if(item_num < 0){
-						console.log("Error al borrar el item de la habitacion");
+					
+					if (item_num < 0) {
+						console.log("Error al borrar el item de la habitación");
 						return;
 					}
-					game_data.rooms[current_room].items.splice(item_num, 1);
 					
+					item_num = findItemNumber(item);
+					console.log(game_data.items[item_num]);
+
+					if (game_data.items[item_num].pickable == false) {
+						terminalOut("<p>El objeto<strong> " + item + "</strong> no puede ser cogido</p>");
+						return;
+					}
+					
+					game_data.rooms[current_room].items.forEach(item => {
+						if (item == instruction[1]) {
+							items_picked.push(game_data.rooms[current_room].items.splice(item_num, 1));
+						}
+					});
+					
+					terminalOut("<p>El objeto<strong> " + item + "</strong> ha sido añadido a tu inventario</p>");
 					return;
 				}
 			});
-
+		
 			break;
 
 
