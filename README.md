@@ -28,3 +28,17 @@ llenguatge de marques
 
 
 - **¿Que es el formato Markdown?**
+
+	El lenguaje MarkDown es un lenguaje de marcar que nos permite formatear textos con cualquier editor de texto y asi poder hacer archivos como este (README.m) y añadirle **negrita**, *cursivas*, listas y etc.
+
+
+- **¿Qué es el formato JSON? ¿Cómo se convierte un objeto a JSON? ¿Y JSON a un objeto?**
+
+	El formato JSON es un formato qur guarda y intercambia informacion que es legible para las personas. los archivos JSON solo contienen texto.
+	Para convertir un objeto a JSON tenemos que usar un un metodo que se llama stringify y esto nos permite poderlo enviar por red. 
+	Si queremos pasar de JSON a un objeto tenemos que pasar el JSON por una promesa y pasarle el metodo *json()* y asi pasara a ser un objeto.
+
+
+
+
+
