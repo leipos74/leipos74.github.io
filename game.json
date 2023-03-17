@@ -13,6 +13,19 @@
 			"description":"pasillo que conecta con diferentes salas y tiene un arbol de nabidad pocho.",
 			"items":["piedra","bicicleta"],
 			"doors":["principal","salida"]
+		},
+		{
+			"id":"classe", 
+			"name":"Classe de DAMVIOD", 
+			"description":"Classe donde programan.",
+			"items":["ordenador","extintor"],
+			"doors":["puerta_classe"]
+		},
+		{
+			"id":"pasillo", 
+			"name":"Pasillo de la planta baja", 
+			"description":"Pasillo que comunica classes.",
+			"doors":["puerta_classe", "salida"]
 		}
 	],
 		
@@ -29,6 +42,18 @@
 		"name":"Bicicleta mugrosa",
 		"description":"Algun profesor la abandono",
 		"pickable":"false"
+	},
+	{
+		"id":"ordenador",
+		"name":"Ordenador usado",
+		"description":"Ordenador que reinician sin parar",
+		"pickable":"false"
+	},
+	{
+		"id":"extintor",
+		"name":"Extintor de la classe",
+		"description":"Extintor que se usa para aguantar la puerta xd",
+		"pickable":"true"
 	}
 	],
 	
@@ -42,6 +67,11 @@
 	{
 		"id":"salida",
 		"description":"La salvacion"
+	},
+	{
+		"id":"puerta_classe",
+		"description":"Para salir de la classe"
+		"rooms":["classe","pasillo"]
 	}
 	
 	]
