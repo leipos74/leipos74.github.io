@@ -1,54 +1,131 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title> En busaca de abascal </title> 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="base.css" />
-
-
-</head>
-
-
-<body>
-<header>
-<h1>Pol Santos, Llenguatge de marques</h1>
-<nav>
-<ul id="main-menu">
-<li id="menu-presentation"><a href="index.html">Presentacion</a></li>
-<li id="menu-hobbies"><a href="hobbies.html">Hobbies</a></li>
-<li id="menu-contact"><a href="contact.html">Contacto</a></li>
-<li id="menu-cv"><a href="cv.html">CV</a></li>
-<li id="menu-game"><a href="game.html">Juego</a></li>
-</ul>
-</nav>
-</header>
-
-<main>
-
-<article>
-<h2>Artículo</h2>
-<p>Ejemplo de contenido</p>
-</article>
-
-<aside>
-<h2>Lateral</h2>
-<p>Menú lateral</p>
-</aside>
-
-</main>
-
+	<head>
+		<title>Alejandro López: Presentación</title>
+		<meta charset="UTF-8">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="base.css"/>
+		<link rel="stylesheet" href="presentation.css"/>
+	</head>
+	<body>
+		<header>
+			<h1>Pol Santos, Llenguatge de marques</h1>
+			<nav>
+				<ul id="main-menu">
+					<li id="menu-presentation"><a href="index.html">Presentación</a></li>
+					<li id="menu-hobbies"><a href="hobbies.html">Hobbies</a></li>
+					<li id="menu-contact"><a href="contact.html">Contacto</a></li>
+					<li id="menu-cv"><a href="cv.html">CV</a></li>
+					<li id="menu-game"><a href="game.html">Juego</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<article id="about-me">
+					<h2>Sobre mi</h2>
+					<figure id="alejandro-photo">
+						<img src="images/alejandrolopez.jpeg">
+						<p id="separator"></p>
+						<p><strong>Game Developer Student</strong></p>
+					</figure>
+					<p class="body-text">Buenas, mi nombre es Alejandro. Soy estudiante de 1r curso de DAM-VIOD (Desarrollo de Aplicaciones Multimedia, Videojuegos i Ocio Digital) en ENTI-UB. Tengo 22 años y también he curso el ciclo de ASIX (Administración de Sistemas en Red) con Ciberseguridad en el instituto IES Esteve Terradas i Illa. Me gusta programar y los videojuegos, por lo que creo que estoy escogiendo el camino correcto 😀</p>
+				</article>
+				<article>
+					<h2>Puedes encontrarme en</h2>
+					<ul id="contact-presentation-list">
+						<figure><a href="https://twitter.com/_buzz_25"><i class="fa fa-twitter"></i></a></figure>
+						<figure><a href="https://www.instagram.com/buzz.25/"><i class="fa fa-instagram"></i></a></figure>
+						<figure><a href="https://www.linkedin.com/in/alejandro-l%C3%B3pez-huesca-7a559b19b/"><i class="fa fa-linkedin-square"></i></a></figure>
+					</ul>
+				</article>
+			</section>
+			<aside>
+				<h2>Asignaturas en el curso 2022 - 2023</h2>
+				<ul id="modules-list">
+					<li><p>Sistemas Operativos</p>
+						<ol class="uf-list">
+							<li class="aprobada">Instalación, configuración y explotación</li>
+							<li class="aprobada">Recursos en red</li>
+							<li class="aprobada">Implementación programario</li>
+							<li class="aprobada">Arquitecturas de consolas i dispositivos móviles</li>
+						</ol>
+					</li>
+					<li><p>Bases de datos</p>
+						<ol class="uf-list">
+							<li class="aprobada">Introducción a las bases de datos</li>
+							<li class="aprobada">Lenguaje SQL: DML i DDL</li>
+							<li class="aprobada">Lenguaje SQL: DCL</li>
+							<li>NoSQL</li>
+						</ol>
+					</li>
+					<li><p>Programación</p>
+						<ol class="uf-list">
+							<li class="aprobada">Programación estructurada</li>
+							<li class="aprobada">Diseño modular</li>
+							<li class="aprobada">Ficheros</li>
+							<li>POO. Introducción</li>
+							<li>POO avanzada</li>
+						</ol>
+					</li>
+					<li><p>Lenguaje de marcas</p>
+						<ol class="uf-list">
+							<li>HTML, CSS i JavaScript</li>
+							<li>Aplicación con React</li>
+							<li>Juego con Phaser</li>
+						</ol>
+					</li>
+					<li><p>Entornos de desarrollo</p>
+						<ol class="uf-list">
+							<li class="aprobada">Asteroids en Unity</li>
+							<li class="aprobada">Plataformas 2D en Unity</li>
+							<li>First Person 3D en Unity</li>
+						</ol>
+					</li>
+					<li><p>Audio</p>
+						<ol class="uf-list">
+							<li>Diseño y producción</li>
+							<li>Integración del audio en motores</li>
+						</ol>
+					</li>
+					<li><p>Game Design</p>
+						<ol class="uf-list">
+							<li class="aprobada">Game Design</li>
+						</ol>
+					</li>
+					<li><p>Diseño 2D y 3D</p>
+						<ol class="uf-list">
+							<li class="suspendida">Diseño 2D</li>
+							<li class="aprobada">Diseño 3D</li>
+						</ol>
+					</li>
+					<li><p>Proyecto</p>
+						<ol class="uf-list">
+							<li>Proyecto final 2D</li>
+						</ol>
+					</li>
+				</ul>
+			</aside>
+		</main>
 		<footer>
-
-
-				<p> Copyright (c) 2022,2023 - Pol Santos</p>
-				<p> OnlyFans: <a href="http://amogus.org/index.html"> @big_titis</a></p>
-
+			<p>Alejandro López &#169 <span id="footer-year">2022</span></p>
+			<script>
+				document.getElementById("footer-year").innerHTML = new Date().getFullYear();
+			</script>
+			<ul id="contact-footer">
+				<li>
+					<figure><a href="https://twitter.com/_buzz_25"><i class="fa fa-twitter"></i></a></figure>
+				</li>
+				<li>
+					<figure><a href="https://www.instagram.com/buzz.25/"><i class="fa fa-instagram"></i></a></figure>
+				</li>
+				<li>
+					<figure><a href="https://www.linkedin.com/in/alejandro-l%C3%B3pez-huesca-7a559b19b/"><i class="fa fa-linkedin-square"></i></a></figure>
+				</li>
+			</ul>
 		</footer>
-
-</body>
-
-
+	</body>
 </html>
