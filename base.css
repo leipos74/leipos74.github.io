@@ -47,8 +47,11 @@ nav {
 }
 
 #main-menu li {
-	padding: 10px;
-	margin: 0 10px;
+	position: absolute; 
+	top: 80px; left: 100px; 
+	color: black; 
+	font-size: x-large;
+	display: grid;
 }
 
 #main-menu a {
