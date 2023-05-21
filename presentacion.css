@@ -15,6 +15,13 @@ h2{
 	flex-direction: column;
 }
 
+
+#Pol-Photo img {
+	width: 350px;
+	height: 350px;
+	border-radius: 15%;
+	margin: 30px;
+}
 #separator {
 	margin: -20px 0 5px 0;
 	width: 50%;
