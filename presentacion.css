@@ -3,17 +3,16 @@ h2{
 	font-size: 80px;
 }
 
-#about-me figure {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
+#about-me h2 {
+	text-align: center;
+	font-size: 60px;
 }
 
-#about-me img {
-	width: 210px;
-	height: 210px;
-	border-radius: 50%;
-	margin: 30px;
+#Pol-Photo {
+	display: flex;
+	
+	align-items: center;	
+	flex-direction: column;
 }
 
 #separator {
