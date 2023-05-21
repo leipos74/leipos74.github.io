@@ -1,26 +1,6 @@
 h2{
 	text-align: center;
-	font-size: 48px;
-}
-
-#about-me figure {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-}
-
-#about-me img {
-	width: 210px;
-	height: 210px;
-	border-radius: 50%;
-	margin: 30px;
-}
-
-#separator {
-	margin: -20px 0 5px 0;
-	width: 50%;
-	height: 10px;
-	background: rgba(22, 22, 23, .8);	
+	font-size: 80px;
 }
 
 .body-text {
@@ -42,42 +22,8 @@ h2{
 	color: rgba(22, 22, 23, .8);
 }
 
-aside h2 {
-	text-align: center;
-	font-size: 28px;
-	margin: 10px 0; 
-}
 
-#modules-list p {
-	font-size: 16px;
-	font-weight: bold;
-	margin: 10px;
-}
-
-.uf-list {
-	counter-reset: section;
-}
-
-.uf-list li {
-	list-style: none;
-	font-size: 15px;
-	margin: 5px -10px;
-}
-
-#contact-presentation-list i:hover {
+#contact i:hover {
 	color: rgb(29, 161, 242);
 }
 
-.aprobada {
-	color: rgb(37, 211, 102);
-	font-weight: bold;
-}
-
-.suspendida {
-	color: rgb(229, 9, 20);
-}
-
-.uf-list li::before {
-  counter-increment: section 1;
-  content: "UF" counter(section) " - ";
-}
