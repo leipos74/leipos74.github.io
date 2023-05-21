@@ -1,7 +1,4 @@
-h2{
-	text-align: center;
-	font-size: 80px;
-}
+
 
 #about-me h2 {
 	text-align: center;
@@ -14,7 +11,7 @@ h2{
     flex-direction: column;
 }
 
-#Pol-Photo img {
+#about-me img {
 	width: 30%;
 	height: 30%;
 	border-radius: 15%;
