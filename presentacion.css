@@ -8,14 +8,7 @@ h2{
 	font-size: 60px;
 }
 
-figure {
-	display: flex;
-	align-items: center;	
-	flex-direction: column;
-}
-
-
-#about-me img {
+#Pol-Photo img {
 	width: 350px;
 	height: 350px;
 	border-radius: 15%;
