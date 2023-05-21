@@ -5,8 +5,7 @@
 #about-me figure {
     align-items: center;
     display: flex;
-    align-items: center;
-
+	text-align: center;
 }
 
 #about-me img {
