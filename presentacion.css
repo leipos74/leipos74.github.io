@@ -10,7 +10,6 @@ h2{
 
 #Pol-Photo {
 	display: flex;
-	
 	align-items: center;	
 	flex-direction: column;
 }
@@ -29,10 +28,12 @@ h2{
 	background: rgba(22, 22, 23, .8);	
 }
 
-.body-text {
-	margin: 0 4%;
-	text-align: justify;
+.body-text p {
+	margin: 3% 10%;
+    text-align: justify;
+    font-size: 32px;
 }
+
 
 #contact-presentation-list {
 	list-style: none;
