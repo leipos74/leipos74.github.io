@@ -1,19 +1,21 @@
-
-
-
-
-#about-me {
-    align-items: center;
-    display: flex;
+h2{
 	text-align: center;
+	font-size: 48px;
+}
+
+#about-me figure {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 }
 
 #about-me img {
-	width: 100px;
-	height: 100px;
-	border-radius: 15%;
-	margin: 100px;
+	width: 210px;
+	height: 210px;
+	border-radius: 50%;
+	margin: 30px;
 }
+
 #separator {
 	margin: -20px 0 5px 0;
 	width: 50%;
@@ -21,12 +23,10 @@
 	background: rgba(22, 22, 23, .8);	
 }
 
-.body-text p {
-	margin: 3% 10%;
-    text-align: justify;
-    font-size: 32px;
+.body-text {
+	margin: 0 4%;
+	text-align: justify;
 }
-
 
 #contact-presentation-list {
 	list-style: none;
@@ -43,14 +43,7 @@
 }
 
 
-#modules-list p {
-	font-size: 16px;
-	font-weight: bold;
-	margin: 10px;
-}
-
-
-
 #contact-presentation-list i:hover {
 	color: rgb(29, 161, 242);
 }
+

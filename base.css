@@ -7,7 +7,6 @@ html {
 body {
 	padding: 0;
 	margin: 0;
-	
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 header {
 	display: flex;
 	align-items: center;
-	background: rgba(6, 9, 16, .8);
+	background: rgba(22, 22, 23, .8);
 	width: 100%;
 }
 
@@ -27,31 +26,21 @@ h1 {
 	color: rgba(255, 255, 255, .8);
 }
 
-h2 {
-	flex-basis: 45%;
-	text-align: center;
-	color: rgba(0, 0, 0, .8);
-}
-
-
 nav {
 	flex-basis: 55%;
 }
 
 #main-menu {
 	list-style: none;
-    padding: 0;
-    margin: 0 5%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
+	display: flex;
+	padding: 0;
+	margin: 0 30px;
+	justify-content: space-between;
 }
 
 #main-menu li {
 	padding: 10px;
-    margin: 0 3%;
+	margin: 0 10px;
 }
 
 #main-menu a {
@@ -61,7 +50,7 @@ nav {
 }
 
 main {
-color: rgba(81,81,81, .8);
+	display: flex;
 }
 
 
@@ -73,11 +62,6 @@ article {
 	display: flex;
 	flex-direction: column;
 	margin: 3% 0;
-}
-
-article p{
-	text-align: center;
-	
 }
 
 
@@ -111,7 +95,7 @@ footer p {
 	}
 	
 	article {
-		flex-basis: 50%;
+		flex-basis: 100%;
 	}
 	
 	aside {
