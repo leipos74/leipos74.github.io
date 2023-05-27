@@ -18,7 +18,7 @@ header, main {
 }
 
 header, nav{
-	background-color: #9B9B9B;
+	background-color: #656666;
 	color: #DFFFEA;
 	
 	text-decoration: none;
@@ -74,8 +74,8 @@ nav {
 #main-menu a {
 	text-decoration: none;
 	
-	color: #DFFFEA;
-	font-size: 32px;
+	color: #9B9B9B;
+	font-size: 24px;
 }
 
 #main-menu li:hover {
@@ -93,7 +93,7 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	
-	background-color: #9B9B9B;
+	background-color: #656666;
 	
 	height: 100px;
 }
