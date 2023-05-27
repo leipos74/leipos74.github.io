@@ -36,10 +36,13 @@
 <h2>Juegaco</h2>
 
 <form>
-<div id="terminal"></div>
-<input type="text" id="commands">
-<input type="submit" value="Acción" onclick="readAction(); return false;"/>
-</form>
+					<div id="terminal">
+					</div>
+					<section id="input-player">
+						<input type="text" name="commands" id="commands"/>
+						<input type="submit" value="Ejecutar" id="submit-command" onclick="executeCommand(); return false;"/>
+					</section>
+				</form>
 </article>
 
 
