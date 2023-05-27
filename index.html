@@ -1,131 +1,99 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<title>Pol santos, Llenguatge de Marques</title>
-		<meta charset="UTF-8">
+		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="base.css"/>
-		<link rel="stylesheet" href="presentation.css"/>
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">	
+		
+		<link rel="stylesheet" href="base.css" />		
+		<link rel="stylesheet" href="presentacion.css" />		
 	</head>
+	
 	<body>
 		<header>
-			<h1>Pol santos (M04UF1)</h1>
+			<div id="title">
+				<h1>Pol santos (M04UF1)</h1>
+			</div>
+			
 			<nav>
 				<ul id="main-menu">
 					<li id="menu-presentation"><a href="index.html">Presentación</a></li>
 					<li id="menu-hobbies"><a href="hobbies.html">Hobbies</a></li>
 					<li id="menu-contact"><a href="contact.html">Contacto</a></li>
-					<li id="menu-cv"><a href="cv.html">CV</a></li>
+					<li id="menu-cv"><a href="cv.html">Currículum</a></li>
 					<li id="menu-game"><a href="game.html">Juego</a></li>
 				</ul>
 			</nav>
 		</header>
+		
 		<main>
 			<section>
 				<article id="about-me">
 					<h2>Sobre mi</h2>
-					<figure id="alejandro-photo">
-						<img src="imgs/pfp.jpg">
-						<p id="separator"></p>
-						<p><strong>Desarollador de videojuegos</strong></p>
-					</figure>
-					<p class="body-text">Hola me llamo Pol Santos y estoy cursando DAM-VIOD en ENTI-UB. Actualmente tengo 19 años 
-					y anterior a este curso he heco un grado medio de SMX en Salesians de sarria. Este curso me esta gustando pero es bastante complejo y exigente
-					pero por otra parte eso garantiza que vayamos a tener un buen futuro laboral y eso me gusta.</p>
 				</article>
-				<article>
-					<h2>Puedes encontrarme en</h2>
-					<ul id="contact-presentation-list">
-						<figure><a href="https://twitter.com/_buzz_25"><i class="fa fa-twitter"></i></a></figure>
-						<figure><a href="https://www.instagram.com/buzz.25/"><i class="fa fa-instagram"></i></a></figure>
-						<figure><a href="https://www.linkedin.com/in/alejandro-l%C3%B3pez-huesca-7a559b19b/"><i class="fa fa-linkedin-square"></i></a></figure>
-					</ul>
+				
+				<article id="photo">
+					<img src="imgs/pfp.jpg">
+					<p id="separator"></p>
+					<p>
+							<strong>Desarrollador de videojuegos</strong>
+					</p>
+				</article>
+					
+				<article id="body-text">
+					<p class="text">
+							Hola me llamo Pol Santos y estoy cursando DAM-VIOD en ENTI-UB. Actualmente tengo 19 años y anterior a este curso he heco un grado medio de SMX en Salesians de sarria.
+					</p>
+						
+					<p class="text">
+							Este curso me esta gustando pero es bastante complejo y exigente pero por otra parte eso garantiza que vayamos a tener un buen futuro laboral y eso me gusta.
+					</p>
+						
 				</article>
 			</section>
-			<aside>
-				<h2>Asignaturas en el curso 2022 - 2023</h2>
-				<ul id="modules-list">
-					<li><p>Sistemas Operativos</p>
-						<ol class="uf-list">
-							<li class="aprobada">Instalación, configuración y explotación</li>
-							<li class="aprobada">Recursos en red</li>
-							<li class="aprobada">Implementación programario</li>
-							<li class="aprobada">Arquitecturas de consolas i dispositivos móviles</li>
-						</ol>
-					</li>
-					<li><p>Bases de datos</p>
-						<ol class="uf-list">
-							<li class="aprobada">Introducción a las bases de datos</li>
-							<li class="aprobada">Lenguaje SQL: DML i DDL</li>
-							<li class="aprobada">Lenguaje SQL: DCL</li>
-							<li>NoSQL</li>
-						</ol>
-					</li>
-					<li><p>Programación</p>
-						<ol class="uf-list">
-							<li class="aprobada">Programación estructurada</li>
-							<li class="aprobada">Diseño modular</li>
-							<li class="aprobada">Ficheros</li>
-							<li>POO. Introducción</li>
-							<li>POO avanzada</li>
-						</ol>
-					</li>
-					<li><p>Lenguaje de marcas</p>
-						<ol class="uf-list">
-							<li>HTML, CSS i JavaScript</li>
-							<li>Aplicación con React</li>
-							<li>Juego con Phaser</li>
-						</ol>
-					</li>
-					<li><p>Entornos de desarrollo</p>
-						<ol class="uf-list">
-							<li class="aprobada">Asteroids en Unity</li>
-							<li class="aprobada">Plataformas 2D en Unity</li>
-							<li>First Person 3D en Unity</li>
-						</ol>
-					</li>
-					<li><p>Audio</p>
-						<ol class="uf-list">
-							<li>Diseño y producción</li>
-							<li>Integración del audio en motores</li>
-						</ol>
-					</li>
-					<li><p>Game Design</p>
-						<ol class="uf-list">
-							<li class="aprobada">Game Design</li>
-						</ol>
-					</li>
-					<li><p>Diseño 2D y 3D</p>
-						<ol class="uf-list">
-							<li class="suspendida">Diseño 2D</li>
-							<li class="aprobada">Diseño 3D</li>
-						</ol>
-					</li>
-					<li><p>Proyecto</p>
-						<ol class="uf-list">
-							<li>Proyecto final 2D</li>
-						</ol>
-					</li>
-				</ul>
-			</aside>
 		</main>
+		
 		<footer>
-			<p>Pol Santos &#169 <span id="footer-year">2022</span></p>
+			<p> 
+				<strong> 
+					Pol santos Garcia © 
+					<span id="footer-year">2022</span> 
+				</strong>
+			</p>
+			
 			<script>
 				document.getElementById("footer-year").innerHTML = new Date().getFullYear();
 			</script>
+			
 			<ul id="contact-footer">
 				<li>
-					<figure><a href="https://twitter.com/_buzz_25"><i class="fa fa-twitter"></i></a></figure>
+					<span class="container"> 
+						<a href="https://instagram.com/xkeddy05/"> 
+							<img src="imgs/Instagram-Icon.png">
+							<img class="top" src="imgs/Instagram-Black-Icon.png">
+						</a>
+					</span>	
 				</li>
+				
 				<li>
-					<figure><a href="https://www.instagram.com/buzz.25/"><i class="fa fa-instagram"></i></a></figure>
+					<span class="container"> 
+						<a href=https://twitter.com/xkeddy05/"> 
+							<img src="imgs/Twitter-Icon.png">
+							<img class="top" src="imgs/Twitter-Black-Icon.png">
+						</a>
+					</span>			
 				</li>
+				
 				<li>
-					<figure><a href="https://www.linkedin.com/in/alejandro-l%C3%B3pez-huesca-7a559b19b/"><i class="fa fa-linkedin-square"></i></a></figure>
+					<span class="container"> 
+						<a href="https://www.linkedin.com/in/dennys-hern%C3%A1ndez-mu%C3%B1iz-69a776221/"> 
+							<img src="imgs/Linkedin-Icon.png">
+							<img class="top" src="imgs/Linkedin-Black-Icon.png">
+						</a>
+					</span>
 				</li>
 			</ul>
 		</footer>
