@@ -18,7 +18,7 @@ header, main {
 }
 
 header, nav{
-	background-color: #518B66;
+	background-color: #9B9B9B;
 	color: #DFFFEA;
 	
 	text-decoration: none;
@@ -93,7 +93,7 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	
-	background-color: #518B66;
+	background-color: #9B9B9B;
 	
 	height: 100px;
 }
@@ -108,34 +108,6 @@ footer p{
 	align-items: center;
 }
 
-#contact-footer {
-	list-style: none;
-	display: flex;
-	padding: 0;
-	margin: 0 30px;
-}
-
-#contact-footer i {
-	font-size: 24px;
-	color: white;
-}
-
-.container {
-	position: relative;
-}
-
-.container img {
-	position: absolute;
-	transition: opacity .2s ease-in-out;
-	height: 65px;
-	width: 65px;
-	
-	margin: -30px 5px 5px -30px;
-}
-
-.container img.top:hover {
-  opacity: 0;
-}
 
 @media (max-width: 600px) {
 	main{
