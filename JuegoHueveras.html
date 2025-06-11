@@ -85,8 +85,8 @@
             textoPuntuacion = this.add.text(canvas_w - 250, 20, 'Points: ' + puntuacion, { font: '32px Arial', fill: '#000000' }).setOrigin(0, 0);
 
             // Game Over texto
-            textoGameOver = this.add.text(canvas_w - 500, 250, { font: '40px Arial', fill: '#000000' }).setOrigin(0, 0);
-            textoPuntuacionGameOver = this.add.text(canvas_w - 600, 250, { font: '40px Arial', fill: '#000000' }).setOrigin(0, 0);
+            textoGameOver = this.add.text(canvas_w - 800, 200, '', { font: '40px Arial', fill: '#000000' }).setOrigin(0, 0);
+            textoPuntuacionGameOver = this.add.text(canvas_w - 800, 250, '', { font: '40px Arial', fill: '#000000' }).setOrigin(0, 0);
 
             this.time.addEvent({
                 delay: 1000,
@@ -209,7 +209,7 @@
 
                 huevoNuevo.on('dragstart', function () {
                     huevoNuevo.isDragging = true;
-                    
+                    huevoNuevo.cayendo.paused = true
                 });
             }
         }
