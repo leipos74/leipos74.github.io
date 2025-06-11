@@ -37,7 +37,7 @@
 
         let game = new Phaser.Game(config);
 
-        let huevera_b, huevera_m, huevera_d;
+        let huevera_b, huevera_m,;
         let huevo_b, huevo_m, huevo_d;
         let huevo_shadow;
         let fondo, caja;
@@ -49,11 +49,11 @@
             this.load.imgs('Background', 'Background.png');
             this.load.imgs('Box', 'Box.png');
 
-            this.load.Audios('BGMMusic', 'BackgroudMusic.mp3');
-            this.load.Audios('GameoverSound', 'GameOver.mp3');
-            this.load.Audios('PickSound', 'PickSound.mp3');
-            this.load.Audios('SuccesSound', 'PickSound.mp3');
-            this.load.Audios('WrongSound', 'WrongSound.mp3');
+            this.load.audios('BGMMusic', 'BackgroudMusic.mp3');
+            this.load.audios('GameoverSound', 'GameOver.mp3');
+            this.load.audios('PickSound', 'PickSound.mp3');
+            this.load.audios('SuccesSound', 'PickSound.mp3');
+            this.load.audios('WrongSound', 'WrongSound.mp3');
         }
 
         function crea() {
