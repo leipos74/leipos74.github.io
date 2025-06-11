@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hueveras de cart�n </title>
+    <title>Hueveras de cartón 2</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"></script>
     <style>
         body {
@@ -13,200 +13,200 @@
         }
     </style>
     <script>
-            let canvas_w = 800;
-            let canvas_h = 450;
-            let gameOver = false;
-            let fondoMusica, gameOverMusica, sonidoAgarre, sonidoCorrecta, sonidoIncorrecta;
+        let canvas_w = 800;
+        let canvas_h = 450;
+        let gameOver = false;
+        let fondoMusica, gameOverMusica, sonidoAgarre, sonidoCorrecta, sonidoIncorrecta;
 
-            // Variables de puntuaci�n y temporizador
-            let tiempoRestante = 60;  // 60 segundos
-            let textoTemporizador;
-            let puntuacion = 0;
-            let textoPuntuacion;
+        // Variables de puntuación y temporizador
+        let tiempoRestante = 60;  // 60 segundos
+        let textoTemporizador;
+        let puntuacion = 0;
+        let textoPuntuacion;
 
-            let config = {
-                type: Phaser.AUTO,
-                width: canvas_w,
-                height: canvas_h,
-                scene: {
-                    preload: precarga,
-                    create: crea,
-                    update: actualiza
-                }
-            };
-
-            let game = new Phaser.Game(config);
-
-            let huevera_b, huevera_m, huevera_d;
-            let huevo_b, huevo_m, huevo_d;
-            let huevo_shadow;
-            let fondo, cinta;
-            let huevos = [];
-
-            function precarga() {
-                this.load.imgs('EggCups', 'EggCups.png');
-                this.load.imgs('Egg', 'Egg.png');
-                this.load.imgs('Background', 'Background.png');
-                this.load.imgs('Box', 'Box.png');
-
-                this.load.Audios('BGMMusic', 'BackgroudMusic.mp3');
-                this.load.Audios('GameoverSound', 'GameOver.mp3');
-                this.load.Audios('PickSound', 'PickSound.mp3');
-                this.load.Audios('SuccesSound', 'PickSound.mp3');
-                this.load.Audios('WrongSound', 'WrongSound.mp3');
+        let config = {
+            type: Phaser.AUTO,
+            width: canvas_w,
+            height: canvas_h,
+            scene: {
+                preload: precarga,
+                create: crea,
+                update: actualiza
             }
+        };
 
-            function crea() {
-                fondo = this.add.imgs(canvas_w / 2, canvas_h / 2, 'Background').setOrigin(0.5, 0.5).setDisplaySize(canvas_w, canvas_h);
-                cinta = this.add.imgs(150, canvas_h / 2, 'Box').setOrigin(0.7, 0.5).setScale(0.5, canvas_h);
+        let game = new Phaser.Game(config);
 
-                // Hueveras
-                huevera_b = this.add.imgs(100, 100, 'EggCups').setScale(0.5).setTint(Phaser.Display.Color.GetColor(255, 255, 255));
-                huevera_m = this.add.imgs(100, 225, 'EggCups').setScale(0.5).setTint(Phaser.Display.Color.GetColor(139, 69, 19));
-                huevera_d = this.add.imgs(100, 350, 'EggCups').setScale(0.5).setTint(Phaser.Display.Color.GetColor(255, 215, 0));
+        let huevera_b, huevera_m, huevera_d;
+        let huevo_b, huevo_m, huevo_d;
+        let huevo_shadow;
+        let fondo, cinta;
+        let huevos = [];
 
-                huevo_shadow = this.add.imgs(-10000, -1000, 'Egg').setTint(Phaser.Display.Color.GetColor(0, 0, 0)).alpha = 0.5;
+        function precarga() {
+            this.load.image('huevera', 'huevera.png');
+            this.load.image('huevo', 'huevo.png');
+            this.load.image('fondo', 'fondo.png');
+            this.load.image('cinta', 'cinta.png');
 
-                // Sonidos
-                musicaFondo = this.sound.add('BGMMusic', { loop: true, volume: 0.5 });
-                gameOverFondo = this.sound.add('GameoverSound', { loop: false, volume: 0.8 });
-                sonidoAgarre = this.sound.add('PickSound', { volume: 1 });
-                sonidoCorrecto = this.sound.add('SuccesSound', { volume: 1 });
-                sonidoIncorrecto = this.sound.add('ErrorSound', { volume: 1 });
+            this.load.audio('musica_fondo', 'musica_fondo.mp3');
+            this.load.audio('musica_gameover', 'musica_gameover.mp3');
+            this.load.audio('sonido_agarre', 'agarre.mp3');
+            this.load.audio('sonido_correcto', 'correcto.mp3');
+            this.load.audio('sonido_incorrecto', 'incorrecto.mp3');
+        }
 
-                musicaFondo.play();
+        function crea() {
+            fondo = this.add.image(canvas_w / 2, canvas_h / 2, 'fondo').setOrigin(0.5, 0.5).setDisplaySize(canvas_w, canvas_h);
+            cinta = this.add.image(150, canvas_h / 2, 'cinta').setOrigin(0.7, 0.5).setScale(0.5, canvas_h);
 
-                // Temporizador
-                textoTemporizador = this.add.text(20, 20, 'Time: ' + tiempoRestante, { font: '32px Arial', fill: '#ffffff' }).setOrigin(0, 0);
-                textoPuntuacion = this.add.text(canvas_w - 250, 20, 'Puntuation: ' + puntuacion, { font: '32px Arial', fill: '#ffffff' }).setOrigin(0, 0);
+            // Hueveras
+            huevera_b = this.add.image(100, 100, 'huevera').setScale(0.5).setTint(Phaser.Display.Color.GetColor(255, 255, 255));
+            huevera_m = this.add.image(100, 225, 'huevera').setScale(0.5).setTint(Phaser.Display.Color.GetColor(139, 69, 19));
+            huevera_d = this.add.image(100, 350, 'huevera').setScale(0.5).setTint(Phaser.Display.Color.GetColor(255, 215, 0));
 
-                this.time.addEvent({
-                    delay: 1000,
-                    callback: actualizarTemporizador,
-                    callbackScope: this,
-                    loop: true
-                });
+            huevo_shadow = this.add.image(-10000, -1000, 'huevo').setTint(Phaser.Display.Color.GetColor(0, 0, 0)).alpha = 0.5;
 
-                this.time.addEvent({
-                    delay: 2000,
-                    callback: generarHuevoAleatorio,
-                    callbackScope: this,
-                    loop: true
-                });
+            // Sonidos
+            musicaFondo = this.sound.add('musica_fondo', { loop: true, volume: 0.5 });
+            gameOverFondo = this.sound.add('musica_gameover', { loop: false, volume: 0.8 });
+            sonidoAgarre = this.sound.add('sonido_agarre', { volume: 1 });
+            sonidoCorrecto = this.sound.add('sonido_correcto', { volume: 1 });
+            sonidoIncorrecto = this.sound.add('sonido_incorrecto', { volume: 1 });
 
-                this.input.on('drag', function (pointer, object, x, y) {
-                    sonidoAgarre.play();
-                    object.x = x;
-                    object.y = y;
-                    huevo_shadow.x = x + 8;
-                    huevo_shadow.y = y + 8;
-                });
+            musicaFondo.play();
 
-                this.input.on('dragend', function (pointer, object, x, y) {
-                    let correcto = false;
-                    let hueveras = [
-                        { object: huevera_b, color: 0xFFFFFF },
-                        { object: huevera_m, color: 0x8B4513 },
-                        { object: huevera_d, color: 0xFFD700 }
-                    ];
-                    for (let i = 0; i < hueveras.length; i++) {
-                        let huevera = hueveras[i];
-                        if (Phaser.Geom.Intersects.RectangleToRectangle(huevera.object.getBounds(), object.getBounds())) {
-                            if (object.tintTopLeft === huevera.color) {
-                                console.log("huevera correcta");
-                                puntuacion += obtenerPuntuacionHuevo(object);
-                                textoPuntuacion.setText('Puntuaci�n: ' + puntuacion);
-                                correcto = true;
-                                object.x = huevera.object.x;
-                                object.y = huevera.object.y;
-                                object.setScale(0.4);
-                                sonidoCorrecto.play();
-                            }
+            // Temporizador
+            textoTemporizador = this.add.text(20, 20, 'Tiempo: ' + tiempoRestante, { font: '32px Arial', fill: '#ffffff' }).setOrigin(0, 0);
+            textoPuntuacion = this.add.text(canvas_w - 250, 20, 'Puntuación: ' + puntuacion, { font: '32px Arial', fill: '#ffffff' }).setOrigin(0, 0);
+
+            this.time.addEvent({
+                delay: 1000,
+                callback: actualizarTemporizador,
+                callbackScope: this,
+                loop: true
+            });
+
+            this.time.addEvent({
+                delay: 2000,
+                callback: generarHuevoAleatorio,
+                callbackScope: this,
+                loop: true
+            });
+
+            this.input.on('drag', function (pointer, object, x, y) {
+                sonidoAgarre.play();
+                object.x = x;
+                object.y = y;
+                huevo_shadow.x = x + 8;
+                huevo_shadow.y = y + 8;
+            });
+
+            this.input.on('dragend', function (pointer, object, x, y) {
+                let correcto = false;
+                let hueveras = [
+                    { object: huevera_b, color: 0xFFFFFF },
+                    { object: huevera_m, color: 0x8B4513 },
+                    { object: huevera_d, color: 0xFFD700 }
+                ];
+                for (let i = 0; i < hueveras.length; i++) {
+                    let huevera = hueveras[i];
+                    if (Phaser.Geom.Intersects.RectangleToRectangle(huevera.object.getBounds(), object.getBounds())) {
+                        if (object.tintTopLeft === huevera.color) {
+                            console.log("huevera correcta");
+                            puntuacion += obtenerPuntuacionHuevo(object);
+                            textoPuntuacion.setText('Puntuación: ' + puntuacion);
+                            correcto = true;
+                            object.x = huevera.object.x;
+                            object.y = huevera.object.y;
+                            object.setScale(0.4);
+                            sonidoCorrecto.play();
                         }
                     }
+                }
 
-                    if (!correcto) {
-                        puntuacion -= 5;
-                        if (puntuacion < 0) puntuacion = 0;
-                        textoPuntuacion.setText('Puntuaci�n: ' + puntuacion);
-                        sonidoIncorrecto.play();
-                        console.log("huevera incorrecta");
-                        object.setScale(1);
+                if (!correcto) {
+                    puntuacion -= 5;
+                    if (puntuacion < 0) puntuacion = 0;
+                    textoPuntuacion.setText('Puntuación: ' + puntuacion);
+                    sonidoIncorrecto.play();
+                    console.log("huevera incorrecta");
+                    object.setScale(1);
+                }
+                object.isDragging = false;
+            });
+        }
+
+        function obtenerPuntuacionHuevo(huevo) {
+            if (huevo.tintTopLeft === Phaser.Display.Color.GetColor(255, 255, 255)) {
+                return 10;
+            } else if (huevo.tintTopLeft === Phaser.Display.Color.GetColor(139, 69, 19)) {
+                return 20;
+            } else if (huevo.tintTopLeft === Phaser.Display.Color.GetColor(255, 215, 0)) {
+                return 30;
+            }
+            return 0;
+        }
+
+        function actualizarTemporizador() {
+            if (!gameOver && tiempoRestante > 0) {
+                tiempoRestante--;
+                textoTemporizador.setText('Tiempo: ' + tiempoRestante);
+            } else if (tiempoRestante === 0 && !gameOver) {
+                darGameOver(this);
+            }
+        }
+
+        function generarHuevoAleatorio() {
+            let colores = ['blanco', 'marron', 'dorado'];
+            let colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
+
+            let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'huevo');
+            huevoNuevo.setScale(0.5);
+
+            if (colorSeleccionado === 'blanco') {
+                huevoNuevo.setTint(Phaser.Display.Color.GetColor(255, 255, 255));
+            } else if (colorSeleccionado === 'marron') {
+                huevoNuevo.setTint(Phaser.Display.Color.GetColor(139, 69, 19));
+            } else {
+                huevoNuevo.setTint(Phaser.Display.Color.GetColor(255, 215, 0));
+            }
+
+            huevoNuevo.setInteractive({ draggable: true });
+            huevoNuevo.isDragging = false;
+
+            let velocidad = Math.random() * 2 + 1;
+
+            huevoNuevo.cayendo = this.tweens.add({
+                targets: huevoNuevo,
+                y: canvas_h + 50,
+                duration: velocidad * 3000,
+                ease: 'Linear',
+                onComplete: function () {
+                    if (!gameOver) {
+                        darGameOver(this);
                     }
-                    object.isDragging = false;
-                });
-            }
-
-            function obtenerPuntuacionHuevo(huevo) {
-                if (huevo.tintTopLeft === Phaser.Display.Color.GetColor(255, 255, 255)) {
-                    return 10;
-                } else if (huevo.tintTopLeft === Phaser.Display.Color.GetColor(139, 69, 19)) {
-                    return 20;
-                } else if (huevo.tintTopLeft === Phaser.Display.Color.GetColor(255, 215, 0)) {
-                    return 30;
+                    huevoNuevo.destroy();
                 }
-                return 0;
-            }
+            });
 
-            function actualizarTemporizador() {
-                if (!gameOver && tiempoRestante > 0) {
-                    tiempoRestante--;
-                    textoTemporizador.setText('Tiempo: ' + tiempoRestante);
-                } else if (tiempoRestante === 0 && !gameOver) {
-                    darGameOver(this);
-                }
-            }
+            huevoNuevo.on('dragstart', function () {
+                huevoNuevo.isDragging = true;
+                huevoNuevo.cayendo.paused = true;
+            });
+        }
 
-            function generarHuevoAleatorio() {
-                let colores = ['blanco', 'marron', 'dorado'];
-                let colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
+        function darGameOver(scene) {
+            musicaFondo.stop();
+            gameOverFondo.play();
+            gameOver = true;
+            console.log("Game Over");
+            textoTemporizador.setText('GAME OVER');
+        }
 
-                let huevoNuevo = this.add.imgs(Math.random() * (canvas_w - 50), -50, 'huevo');
-                huevoNuevo.setScale(0.5);
-
-                if (colorSeleccionado === 'blanco') {
-                    huevoNuevo.setTint(Phaser.Display.Color.GetColor(255, 255, 255));
-                } else if (colorSeleccionado === 'marron') {
-                    huevoNuevo.setTint(Phaser.Display.Color.GetColor(139, 69, 19));
-                } else {
-                    huevoNuevo.setTint(Phaser.Display.Color.GetColor(255, 215, 0));
-                }
-
-                huevoNuevo.setInteractive({ draggable: true });
-                huevoNuevo.isDragging = false;
-
-                let velocidad = Math.random() * 2 + 1;
-
-                huevoNuevo.cayendo = this.tweens.add({
-                    targets: huevoNuevo,
-                    y: canvas_h + 50,
-                    duration: velocidad * 3000,
-                    ease: 'Linear',
-                    onComplete: function () {
-                        if (!gameOver) {
-                            darGameOver(this);
-                        }
-                        huevoNuevo.destroy();
-                    }
-                });
-
-                huevoNuevo.on('dragstart', function () {
-                    huevoNuevo.isDragging = true;
-                    huevoNuevo.cayendo.paused = true;
-                });
-            }
-
-            function darGameOver(scene) {
-                musicaFondo.stop();
-                gameOverFondo.play();
-                gameOver = true;
-                console.log("Game Over");
-                textoTemporizador.setText('GAME OVER');
-            }
-
-            function actualiza() {
-                
-            }
+        function actualiza() {
+            // Aquí va el código de la actualización si es necesario
+        }
     </script>
 </head>
 <body>
