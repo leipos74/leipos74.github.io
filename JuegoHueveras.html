@@ -49,11 +49,11 @@
                 this.load.imgs('Background', 'Background.png');
                 this.load.imgs('Box', 'Box.png');
 
-                this.load.audio('musica_fondo', 'musica_fondo.mp3');
-                this.load.audio('musica_gameover', 'musica_gameover.mp3');
-                this.load.audio('sonido_agarre', 'agarre.mp3');
-                this.load.audio('sonido_correcto', 'correcto.mp3');
-                this.load.audio('sonido_incorrecto', 'incorrecto.mp3');
+                this.load.Audios('BGMMusic', 'BackgroudMusic.mp3');
+                this.load.Audios('GameoverSound', 'GameOver.mp3');
+                this.load.Audios('PickSound', 'PickSound.mp3');
+                this.load.Audios('SuccesSound', 'PickSound.mp3');
+                this.load.Audios('WrongSound', 'WrongSound.mp3');
             }
 
             function crea() {
@@ -68,17 +68,17 @@
                 huevo_shadow = this.add.imgs(-10000, -1000, 'Egg').setTint(Phaser.Display.Color.GetColor(0, 0, 0)).alpha = 0.5;
 
                 // Sonidos
-                musicaFondo = this.sound.add('musica_fondo', { loop: true, volume: 0.5 });
-                gameOverFondo = this.sound.add('musica_gameover', { loop: false, volume: 0.8 });
-                sonidoAgarre = this.sound.add('sonido_agarre', { volume: 1 });
-                sonidoCorrecto = this.sound.add('sonido_correcto', { volume: 1 });
-                sonidoIncorrecto = this.sound.add('sonido_incorrecto', { volume: 1 });
+                musicaFondo = this.sound.add('BGMMusic', { loop: true, volume: 0.5 });
+                gameOverFondo = this.sound.add('GameoverSound', { loop: false, volume: 0.8 });
+                sonidoAgarre = this.sound.add('PickSound', { volume: 1 });
+                sonidoCorrecto = this.sound.add('SuccesSound', { volume: 1 });
+                sonidoIncorrecto = this.sound.add('ErrorSound', { volume: 1 });
 
                 musicaFondo.play();
 
                 // Temporizador
-                textoTemporizador = this.add.text(20, 20, 'Tiempo: ' + tiempoRestante, { font: '32px Arial', fill: '#ffffff' }).setOrigin(0, 0);
-                textoPuntuacion = this.add.text(canvas_w - 250, 20, 'Puntuación: ' + puntuacion, { font: '32px Arial', fill: '#ffffff' }).setOrigin(0, 0);
+                textoTemporizador = this.add.text(20, 20, 'Time: ' + tiempoRestante, { font: '32px Arial', fill: '#ffffff' }).setOrigin(0, 0);
+                textoPuntuacion = this.add.text(canvas_w - 250, 20, 'Puntuation: ' + puntuacion, { font: '32px Arial', fill: '#ffffff' }).setOrigin(0, 0);
 
                 this.time.addEvent({
                     delay: 1000,
