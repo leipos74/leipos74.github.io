@@ -44,10 +44,10 @@
             let huevos = [];
 
             function precarga() {
-                this.load.image('huevera', 'huevera.png');
-                this.load.image('huevo', 'huevo.png');
-                this.load.image('fondo', 'fondo.png');
-                this.load.image('cinta', 'cinta.png');
+                this.load.imgs('EggCups', 'EggCups.png');
+                this.load.imgs('Egg', 'Egg.png');
+                this.load.imgs('Background', 'Background.png');
+                this.load.imgs('Box', 'Box.png');
 
                 this.load.audio('musica_fondo', 'musica_fondo.mp3');
                 this.load.audio('musica_gameover', 'musica_gameover.mp3');
@@ -57,15 +57,15 @@
             }
 
             function crea() {
-                fondo = this.add.image(canvas_w / 2, canvas_h / 2, 'fondo').setOrigin(0.5, 0.5).setDisplaySize(canvas_w, canvas_h);
-                cinta = this.add.image(150, canvas_h / 2, 'cinta').setOrigin(0.7, 0.5).setScale(0.5, canvas_h);
+                fondo = this.add.imgs(canvas_w / 2, canvas_h / 2, 'Background').setOrigin(0.5, 0.5).setDisplaySize(canvas_w, canvas_h);
+                cinta = this.add.imgs(150, canvas_h / 2, 'Box').setOrigin(0.7, 0.5).setScale(0.5, canvas_h);
 
                 // Hueveras
-                huevera_b = this.add.image(100, 100, 'huevera').setScale(0.5).setTint(Phaser.Display.Color.GetColor(255, 255, 255));
-                huevera_m = this.add.image(100, 225, 'huevera').setScale(0.5).setTint(Phaser.Display.Color.GetColor(139, 69, 19));
-                huevera_d = this.add.image(100, 350, 'huevera').setScale(0.5).setTint(Phaser.Display.Color.GetColor(255, 215, 0));
+                huevera_b = this.add.imgs(100, 100, 'EggCups').setScale(0.5).setTint(Phaser.Display.Color.GetColor(255, 255, 255));
+                huevera_m = this.add.imgs(100, 225, 'EggCups').setScale(0.5).setTint(Phaser.Display.Color.GetColor(139, 69, 19));
+                huevera_d = this.add.imgs(100, 350, 'EggCups').setScale(0.5).setTint(Phaser.Display.Color.GetColor(255, 215, 0));
 
-                huevo_shadow = this.add.image(-10000, -1000, 'huevo').setTint(Phaser.Display.Color.GetColor(0, 0, 0)).alpha = 0.5;
+                huevo_shadow = this.add.imgs(-10000, -1000, 'Egg').setTint(Phaser.Display.Color.GetColor(0, 0, 0)).alpha = 0.5;
 
                 // Sonidos
                 musicaFondo = this.sound.add('musica_fondo', { loop: true, volume: 0.5 });
@@ -161,7 +161,7 @@
                 let colores = ['blanco', 'marron', 'dorado'];
                 let colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
 
-                let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'huevo');
+                let huevoNuevo = this.add.imgs(Math.random() * (canvas_w - 50), -50, 'huevo');
                 huevoNuevo.setScale(0.5);
 
                 if (colorSeleccionado === 'blanco') {
@@ -205,7 +205,7 @@
             }
 
             function actualiza() {
-                // Aquí va el código de la actualización si es necesario
+                
             }
     </script>
 </head>
