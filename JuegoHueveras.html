@@ -65,7 +65,7 @@
             huevera_m = this.add.image(100, 225, 'EggCups').setScale(0.3).setTint(Phaser.Display.Color.GetColor(139, 69, 19));
             huevera_d = this.add.image(100, 350, 'EggCups').setScale(0.3).setTint(Phaser.Display.Color.GetColor(255, 215, 0));
 
-            huevo_shadow = this.add.image(-10000, -1000, 'Egg').setScale(10).setTint(Phaser.Display.Color.GetColor(0, 0, 0)).alpha = 0.5;
+            huevo_shadow = this.add.image(-10000, -1000, 'Egg').setTint(Phaser.Display.Color.GetColor(0, 0, 0)).alpha = 1;
 
             // Sonidos
             musicaFondo = this.sound.add('BGMMusic', { loop: true, volume: 0.5 });
@@ -164,7 +164,7 @@
             let colores = ['blanco', 'marron', 'dorado'];
             let colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
 
-            let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'huevo');
+            let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'Egg');
             huevoNuevo.setScale(0.03);
 
             if (colorSeleccionado === 'blanco') {
