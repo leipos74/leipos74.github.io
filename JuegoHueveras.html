@@ -77,8 +77,8 @@
             musicaFondo.play();
 
             // Temporizador
-            textoTemporizador = this.add.text(20, 20, 'Tiempo: ' + tiempoRestante, { font: '32px Arial', fill: '#ffffff' }).setOrigin(0, 0);
-            textoPuntuacion = this.add.text(canvas_w - 250, 20, 'Puntuación: ' + puntuacion, { font: '32px Arial', fill: '#ffffff' }).setOrigin(0, 0);
+            textoTemporizador = this.add.text(20, 20, 'Time: ' + tiempoRestante, { font: '32px Arial', fill: '#000000' }).setOrigin(0, 0);
+            textoPuntuacion = this.add.text(canvas_w - 250, 20, 'Points: ' + puntuacion, { font: '32px Arial', fill: '#000000' }).setOrigin(0, 0);
 
             this.time.addEvent({
                 delay: 1000,
@@ -164,7 +164,7 @@
             let colores = ['blanco', 'marron', 'dorado'];
             let colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
 
-            let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'Egg');
+            let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'Egg').setScale(1);
             huevoNuevo.setScale(0.03);
 
             if (colorSeleccionado === 'blanco') {
