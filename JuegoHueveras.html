@@ -123,7 +123,7 @@
                             correcto = true;
                             object.x = huevera.object.x;
                             object.y = huevera.object.y;
-                            object.setScale(0.10);
+                            object.setScale(0.06);
                             sonidoCorrecto.play();
                         }
                     }
@@ -189,6 +189,7 @@
                 onComplete: function () {
                     if (!gameOver) {
                         darGameOver(this);
+                        velocidad = 0;
                     }
                     huevoNuevo.destroy();
                 }
