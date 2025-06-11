@@ -162,43 +162,45 @@
         }
 
         function generarHuevoAleatorio() {
-            let colores = ['blanco', 'marron', 'dorado'];
-            let colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
+            if (!gameOver) {
 
-            let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'Egg');
-            huevoNuevo.setScale(0.1);
+                let colores = ['blanco', 'marron', 'dorado'];
+                let colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
 
-            if (colorSeleccionado === 'blanco') {
-                huevoNuevo.setTint(Phaser.Display.Color.GetColor(255, 255, 255));
-            } else if (colorSeleccionado === 'marron') {
-                huevoNuevo.setTint(Phaser.Display.Color.GetColor(139, 69, 19));
-            } else {
-                huevoNuevo.setTint(Phaser.Display.Color.GetColor(255, 215, 0));
-            }
+                let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'Egg');
+                huevoNuevo.setScale(0.1);
 
-            huevoNuevo.setInteractive({ draggable: true });
-            huevoNuevo.isDragging = false;
-
-            let velocidad = Math.random() * 2 + 1;
-
-            huevoNuevo.cayendo = this.tweens.add({
-                targets: huevoNuevo,
-                y: canvas_h + 50,
-                duration: velocidad * 3000,
-                ease: 'Linear',
-                onComplete: function () {
-                    if (!gameOver) {
-                        darGameOver(this);
-                        velocidad = 0;
-                    }
-                    huevoNuevo.destroy();
+                if (colorSeleccionado === 'blanco') {
+                    huevoNuevo.setTint(Phaser.Display.Color.GetColor(255, 255, 255));
+                } else if (colorSeleccionado === 'marron') {
+                    huevoNuevo.setTint(Phaser.Display.Color.GetColor(139, 69, 19));
+                } else {
+                    huevoNuevo.setTint(Phaser.Display.Color.GetColor(255, 215, 0));
                 }
-            });
 
-            huevoNuevo.on('dragstart', function () {
-                huevoNuevo.isDragging = true;
-                huevoNuevo.cayendo.paused = true;
-            });
+                huevoNuevo.setInteractive({ draggable: true });
+                huevoNuevo.isDragging = false;
+
+                let velocidad = Math.random() * 2 + 1;
+
+                huevoNuevo.cayendo = this.tweens.add({
+                    targets: huevoNuevo,
+                    y: canvas_h + 50,
+                    duration: velocidad * 3000,
+                    ease: 'Linear',
+                    onComplete: function () {
+                        if (!gameOver) {
+                            darGameOver(this);
+                        }
+                        huevoNuevo.destroy();
+                    }
+                });
+
+                huevoNuevo.on('dragstart', function () {
+                    huevoNuevo.isDragging = true;
+                    huevoNuevo.cayendo.paused = true;
+                });
+            }
         }
 
         function darGameOver(scene) {
