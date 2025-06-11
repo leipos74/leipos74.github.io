@@ -85,8 +85,8 @@
             textoPuntuacion = this.add.text(canvas_w - 250, 20, 'Points: ' + puntuacion, { font: '32px Arial', fill: '#000000' }).setOrigin(0, 0);
 
             // Game Over texto
-            textoGameOver = this.add.text(canvas_w - 800, 200, '', { font: '40px Arial', fill: '#000000' }).setOrigin(0, 0);
-            textoPuntuacionGameOver = this.add.text(canvas_w - 800, 250, '', { font: '40px Arial', fill: '#000000' }).setOrigin(0, 0);
+            textoGameOver = this.add.text(canvas_w - 300, 200, '', { font: '40px Arial', fill: '#000000' }).setOrigin(0, 0);
+            textoPuntuacionGameOver = this.add.text(canvas_w - 300, 250, '', { font: '40px Arial', fill: '#000000' }).setOrigin(0, 0);
 
             this.time.addEvent({
                 delay: 1000,
@@ -139,7 +139,7 @@
                     }
                 }
 
-                if (!correcto) {
+                if (!correcto && !gameOver) {
                     puntuacion -= 5;
                     if (puntuacion < 0) puntuacion = 0;
                     textoPuntuacion.setText('Points: ' + puntuacion);
@@ -215,7 +215,6 @@
         }
 
         function GameOver(scene) {
-            scene.stop();
             musicaFondo.stop();
             gameOverFondo.play();
             gameOver = true;
