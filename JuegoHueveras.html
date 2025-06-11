@@ -44,16 +44,16 @@
         let huevos = [];
 
         function precarga() {
-            this.load.image('EggCups', 'EggCups.png');
-            this.load.image('Egg', 'Egg.png');
-            this.load.image('Background', 'Background.png');
-            this.load.image('Box', 'Box.png');
+            this.load.image('EggCups', 'imgs/EggCups.png');
+            this.load.image('Egg', 'imgs/Egg.png');
+            this.load.image('Background', 'imgs/Background.png');
+            this.load.image('Box', 'imgs/Box.png');
 
-            this.load.audio('BGMMusic', 'BackgroudMusic.mp3');
-            this.load.audio('GameoverSound', 'GameOver.mp3');
-            this.load.audio('PickSound', 'PickSound.mp3');
-            this.load.audio('SuccesSound', 'PickSound.mp3');
-            this.load.audio('WrongSound', 'WrongSound.mp3');
+            this.load.audio('BGMMusic', 'audios/BackgroudMusic.mp3');
+            this.load.audio('GameoverSound', 'audios/GameOver.mp3');
+            this.load.audio('PickSound', 'audios/PickSound.mp3');
+            this.load.audio('SuccesSound', 'audios/PickSound.mp3');
+            this.load.audio('WrongSound', 'audios/WrongSound.mp3');
         }
 
         function crea() {
@@ -115,11 +115,14 @@
                         if (object.tintTopLeft === huevera.color) {
                             console.log("huevera correcta");
                             puntuacion += obtenerPuntuacionHuevo(object);
+                            tiempoRestante += 3;
+                            textoTemporizador.setText('Tiempo: ' + tiempoRestante);
+                            textoPuntuacion.setText('Puntuación: ' + puntuacion);
                             textoPuntuacion.setText('Puntuación: ' + puntuacion);
                             correcto = true;
                             object.x = huevera.object.x;
                             object.y = huevera.object.y;
-                            object.setScale(0.4);
+                            object.setScale(0.018);
                             sonidoCorrecto.play();
                         }
                     }
@@ -131,7 +134,7 @@
                     textoPuntuacion.setText('Puntuación: ' + puntuacion);
                     sonidoIncorrecto.play();
                     console.log("huevera incorrecta");
-                    object.setScale(1);
+                    object.setScale(0.03);
                 }
                 object.isDragging = false;
             });
@@ -161,8 +164,8 @@
             let colores = ['blanco', 'marron', 'dorado'];
             let colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
 
-            let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'Egg');
-            huevoNuevo.setScale(0.5);
+            let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'huevo');
+            huevoNuevo.setScale(0.03);
 
             if (colorSeleccionado === 'blanco') {
                 huevoNuevo.setTint(Phaser.Display.Color.GetColor(255, 255, 255));
