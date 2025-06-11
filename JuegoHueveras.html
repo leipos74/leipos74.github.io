@@ -100,6 +100,7 @@
                 object.y = y;
                 huevo_shadow.x = x + 8;
                 huevo_shadow.y = y + 8;
+                object.setScale(0.15);
             });
 
             this.input.on('dragend', function (pointer, object, x, y) {
@@ -122,7 +123,7 @@
                             correcto = true;
                             object.x = huevera.object.x;
                             object.y = huevera.object.y;
-                            object.setScale(0.018);
+                            object.setScale(0.10);
                             sonidoCorrecto.play();
                         }
                     }
@@ -134,7 +135,7 @@
                     textoPuntuacion.setText('Points: ' + puntuacion);
                     sonidoIncorrecto.play();
                     console.log("huevera incorrecta");
-                    object.setScale(0.03);
+                    object.setScale(0.10);
                 }
                 object.isDragging = false;
             });
@@ -165,7 +166,7 @@
             let colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
 
             let huevoNuevo = this.add.image(Math.random() * (canvas_w - 50), -50, 'Egg');
-            huevoNuevo.setScale(0.5);
+            huevoNuevo.setScale(0.1);
 
             if (colorSeleccionado === 'blanco') {
                 huevoNuevo.setTint(Phaser.Display.Color.GetColor(255, 255, 255));
